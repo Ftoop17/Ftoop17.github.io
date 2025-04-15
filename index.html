@@ -10,10 +10,10 @@
   <header>
     <h1>MIRAJE AI</h1>
     <nav>
-      <button class="nav-button">Главная</button>
-      <button class="nav-button">Новости</button>
-      <button class="nav-button">API</button>
-      <button class="nav-button">Профиль</button>
+      <button class="nav-button" onclick="navigate('home')">Главная</button>
+      <button class="nav-button" onclick="navigate('news')">Новости</button>
+      <button class="nav-button" onclick="navigate('api')">API</button>
+      <button class="nav-button" onclick="navigate('profile')">Профиль</button>
     </nav>
   </header>
   
@@ -21,7 +21,7 @@
     <section class="hero">
       <h2>Добро пожаловать в MIRAJE AI</h2>
       <p>Ваш надежный партнер в мире искусственного интеллекта.</p>
-      <button class="cta-button">Узнать больше</button>
+      <button class="cta-button" onclick="learnMore()">Узнать больше</button>
     </section>
     
     <section class="features">
@@ -40,3 +40,11 @@
       </div>
     </section>
   </main>
+  
+  <footer>
+    <p>&copy; 2025 MIRAJE AI. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
