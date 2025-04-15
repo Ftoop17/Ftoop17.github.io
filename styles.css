@@ -29,11 +29,12 @@ nav {
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .nav-button:hover {
   background-color: #004494;
+  transform: scale(1.1);
 }
 
 .hero {
@@ -51,11 +52,12 @@ nav {
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .cta-button:hover {
   background-color: #218838;
+  transform: scale(1.1);
 }
 
 .features {
@@ -71,6 +73,11 @@ nav {
   padding: 20px;
   display: inline-block;
   width: calc(33% - 40px);
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
 }
 
 footer {
