@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRAJE | KCHR - Карачаево-Балкарский Переводчик</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>MIRAJE | KCHR</h1>
+                <p>Карачаево-Балкарский Переводчик</p>
+            </div>
+            <div class="api-btn">
+                <button id="apiKeyBtn">Получить API ключ</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="translator-box">
+                <div class="language-selector">
+                    <select id="sourceLang">
+                        <option value="ru">Русский</option>
+                        <option value="kchr">Карачаевский</option>
+                    </select>
+                    <button id="swapLangs" class="swap-btn"><i class="fas fa-exchange-alt"></i></button>
+                    <select id="targetLang">
+                        <option value="kchr">Карачаевский</option>
+                        <option value="ru">Русский</option>
+                    </select>
+                </div>
+
+                <div class="text-areas">
+                    <textarea id="sourceText" placeholder="Введите текст для перевода..."></textarea>
+                    <textarea id="targetText" placeholder="Перевод" readonly></textarea>
+                </div>
+
+                <div class="controls">
+                    <button id="translateBtn" class="primary-btn">Перевести</button>
+                    <button id="clearBtn" class="secondary-btn">Очистить</button>
+                    <button id="listenSource" class="icon-btn" title="Прослушать исходный текст"><i class="fas fa-volume-up"></i></button>
+                    <button id="listenTarget" class="icon-btn" title="Прослушать перевод"><i class="fas fa-volume-up"></i></button>
+                    <button id="copyTarget" class="icon-btn" title="Копировать перевод"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Двусторонний перевод</h3>
+                    <p>Переводите между русским и карачаевским языками</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-text-height"></i>
+                    <h3>Большие тексты</h3>
+                    <p>Обрабатываем как отдельные слова, так и длинные тексты</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>API доступ</h3>
+                    <p>Интегрируйте наш переводчик в свои проекты</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>MIRAJE | KCHR - это открытый проект по созданию качественного карачаево-балкарского переводчика.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="social-links">
+                        <li><a href="https://github.com/ftoop17" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://vk.com/thetemirbolatov" target="_blank"><i class="fab fa-vk"></i> ВКонтакте</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>API документация</h3>
+                    <p>Для получения API ключа нажмите соответствующую кнопку в шапке сайта.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MIRAJE | KCHR Переводчик. Все права защищены.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальное окно API -->
+    <div id="apiModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>API Доступ</h2>
+            <div id="apiKeyDisplay" class="api-key-display">
+                <p>Ваш API ключ:</p>
+                <div class="key-box">
+                    <span id="apiKey"></span>
+                    <button id="copyApiKey"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+            <div class="api-docs">
+                <h3>Документация API</h3>
+                <p>Для использования API отправьте POST запрос на:</p>
+                <code>/api/translate</code>
+                <p>Параметры запроса:</p>
+                <ul>
+                    <li><strong>sourceLang</strong>: исходный язык ('ru' или 'kchr')</li>
+                    <li><strong>targetLang</strong>: целевой язык ('ru' или 'kchr')</li>
+                    <li><strong>text</strong>: текст для перевода</li>
+                    <li><strong>apiKey</strong>: ваш API ключ</li>
+                </ul>
+                <p>Пример ответа:</p>
+                <pre>{
+    "success": true,
+    "translatedText": "Переведенный текст",
+    "sourceText": "Исходный текст"
+}</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
