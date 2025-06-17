@@ -1,0 +1,285 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(70, 0, 0, 0.2) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(70, 0, 0, 0.2) 0%, transparent 20%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(20, 20, 20, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #3a0000;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #8b0000, #580000, #8b0000);
+}
+
+/* Заголовок */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.header h1 span {
+    color: #b22222;
+}
+
+.blood-drops {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.drop {
+    width: 12px;
+    height: 12px;
+    background-color: #8b0000;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(45deg);
+    opacity: 0.7;
+}
+
+/* Экраны */
+.screen {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #b0b0b0;
+}
+
+/* Кнопки */
+.vampire-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: linear-gradient(to right, #580000, #8b0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vampire-btn:hover {
+    background: linear-gradient(to right, #8b0000, #580000);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+}
+
+.vampire-btn:active {
+    transform: translateY(0);
+}
+
+.vampire-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: all 0.3s;
+}
+
+.vampire-btn:hover::after {
+    left: 100%;
+}
+
+/* Прогресс бар */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #8b0000, #580000);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Вопросы */
+#question-text {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: #d4af37;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    padding: 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #3a0000;
+    border-radius: 8px;
+    color: #d0d0d0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.option-btn:hover {
+    background-color: #2a2a2a;
+    border-color: #8b0000;
+    transform: translateX(5px);
+}
+
+/* Результат */
+.result-content {
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.character-image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #8b0000;
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+}
+
+#result-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blood-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, transparent 60%, rgba(139, 0, 0, 0.3) 100%);
+}
+
+#result-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#result-description {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #b0b0b0;
+    line-height: 1.7;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.buttons-container .vampire-btn {
+    flex: 1;
+    max-width: 200px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    #question-text {
+        font-size: 1.2rem;
+    }
+    
+    .character-image-container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .buttons-container .vampire-btn {
+        max-width: 100%;
+    }
+}

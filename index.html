@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кто ты из Дневников вампира?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>Кто ты из <span>Дневников вампира</span>?</h1>
+            <div class="blood-drops">
+                <div class="drop"></div>
+                <div class="drop"></div>
+                <div class="drop"></div>
+            </div>
+        </div>
+        
+        <div id="start-screen" class="screen active">
+            <div class="description">
+                <p>Ответь на 7 вопросов и узнай, какой персонаж из Mystic Falls скрывается в тебе!</p>
+            </div>
+            <button id="start-btn" class="vampire-btn">Начать тест</button>
+        </div>
+        
+        <div id="quiz-screen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="options-container" class="options-container"></div>
+        </div>
+        
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <h2>Твой результат:</h2>
+                <div class="character-image-container">
+                    <img id="result-image" src="" alt="Персонаж">
+                    <div class="blood-effect"></div>
+                </div>
+                <h3 id="result-name"></h3>
+                <p id="result-description"></p>
+                <div class="buttons-container">
+                    <button id="share-btn" class="vampire-btn">Поделиться</button>
+                    <button id="restart-btn" class="vampire-btn">Пройти снова</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vk-bridge/dist/browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
